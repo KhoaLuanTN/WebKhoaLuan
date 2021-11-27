@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+<link th:rel="stylesheet"
+	th:href="@{/assets/bootstrap/css/bootstrap.min.css} " />
+</head>
+</head>
+<body>
+	<div class="container-login">
+		<div class="title-login">
+
+			<div class="text-sign-in">ĐĂNG NHẬP</div>
+			<div class="sign-in-with-gg">
+				<div class="span">Kết nối với google</div>
+				<div>
+					<i class="logo-google" />
+				</div>
+
+			</div>
+			<form th:action="@{/doLogin}" method="post">
+				<div class="text-padding">
+					<div class="text-sign-name">Tên đăng nhập</div>
+					<input type="text" name="username" class="input-field"><br>
+				</div>
+				<div class="text-padding">
+					<div class="text-sign-name">Mật khẩu</div>
+					<input type="password" name="password" class="input-field"><br>
+				</div>
+				<div class="text-padding">
+						<div>
+
+							<!-- <br> <input type="submit" value="Dang nhap"> -->
+							<div class="container-btn-login">
+								<button class="button-login" type="submit" value="Dang nhap">Đăng
+									nhâp</button>
+							</div>
+						</div>
+			</form>
+			<a th:href="@{/dang-ky}" class="login-home" style="display: flex;">Chưa có tài khoản
+				<div style="color: #5840bb; padding-left: 7px; "> Đăng ký</div>
+			</a>
+		</div>
+
+		<div th:if="${thanhcong}">[[${thanhcong}]]</div>
+		<div th:if="${thatbai}">[[${thatbai}]]</div>
+	</div>
+
+
+
+
+	<script type="text/javascript" th:src="@{/css/xuli.js}"></script>
+	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+</html>

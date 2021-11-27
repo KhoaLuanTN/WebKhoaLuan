@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Dang ky</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+</head>
+<body>
+	<div class="container-login">
+		<div class="title-login">
+			<h3 class="resgiter-page">ĐĂNG KÝ</h3>
+			<br>
+			<div class="sign-in-with-gg">
+				<div class="span">Kết nối với tài khoản google</div>
+				<div>
+					<i class="logo-google" />
+				</div>
+			</div>
+			<div class="formdangky">
+				<form th:action="@{/dang-ky}" method="post">
+					<div class="form-group">
+						<label class="form-label">Họ và tên</label> <input type="text" class="form-control" name="ten">
+					</div>
+					<div class="form-group">
+						<label class="form-label">Giới tính </label> <select class="form-control" name="gioiTinh">
+							<option value="true">Nam</option>
+							<option value="false">Nữ</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="form-label">Địa chỉ</label> <input type="text" class="form-control" name="diaChi">
+					</div>
+					<div class="form-group date">
+						<label class="form-label">Ngày sinh</label> <input type="date" class="form-control"
+							required="required" name="ngay_sinh">
+					</div>
+					<div class="form-group">
+						<label class="form-label">Email</label> <input type="email" class="form-control" name="email">
+					</div>
+					<div class="form-group date">
+						<label class="form-label">Số điện thoại</label> <input type="text" class="form-control"
+							name="soDienThoai">
+					</div>
+					<div class="form-group date">
+						<label class="form-label">Chứng minh nhân dân</label> <input type="text" class="form-control"
+							name="cmnd">
+					</div>
+					<div class="form-group date">
+						<label class="form-label">Tài khoản</label> <input type="text" class="form-control"
+							name="username">
+					</div>
+					<div class="container-btn-login">
+						<button class="button-login" type="submit" value="Dang nhap">Đăng ký</button>
+					</div>
+				</form>
+			</div>
+			<a th:href="@{/dang-nhap}" class="login-home" style="display: flex;">Đã có tài khoản
+				<div style="color: #5840bb; padding-left: 8px;">Đăng nhập</div>
+			</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

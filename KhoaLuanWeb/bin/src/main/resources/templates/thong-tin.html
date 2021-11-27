@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+	<title>Thonng tin ca nhan</title>
+	<meta charset="utf-8">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jQuery UI Tabs - Default functionality</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+	<link href="" rel="stylesheet" type="text/css" th:href="@{/css/jquery-ui.css}">
+	<link href="" rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+	<link href="" rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+	<script type="text/javascript" th:src="@{/js/jquery-3.6.0.js}"></script>
+	<script>
+		$(function () {
+			$("#tabs").tabs();
+		});
+	</script>
+</head>
+
+<body>
+	<div class="menu_tab" style="background-color: #fff;" id="tabs">
+		<ul>
+			<li><a href="#tabs-1" id="tt">Thông Tin Cá Nhân</a></li>
+			<li><a href="#tabs-2" id="lh">Thông Tin Lịch Hẹn</a></li>
+			<li><a href="#tabs-3" id="pk">Thông Tin Phiếu Khám Bệnh</a></li>
+		</ul>
+		<div id="tabs-1" class="tab1">
+			<div class="container">
+				<form th:action="@{/capnhat}" method="post" th:object="${benhnhan}">
+					<div class="d-grid gap-4" id="anhnens1">
+						<div class="row p-3 ">
+							<div class="col-md-6">
+								<label for="inputEmail3" class="col m-0 p-2 ">Họ và Tên
+									:</label> <input type="text" class="col form-control" placeholder="Họ và Tên"
+									id="hoVaTen" th:field="*{ten}">
+							</div>
+							<div class="col-md-6">
+								<label for="inputEmail3" class="col m-0 p-2">Giới Tính :</label>
+								<select class="form-control" name="gioiTinh">
+									<option value="true" th:field="*{gioiTinh}">Nam</option>
+									<option value="false" th:field="*{gioiTinh}">Nữ</option>
+								</select>
+							</div>
+						</div>
+						<div class="row p-3">
+							<div class="col-md-6">
+								<label for="inputEmail3" class="col m-0 p-2">Địa Chỉ :</label>
+								<textarea rows="1" class="col form-control" id="diaChi" placeholder="Địa Chỉ"
+									th:field="*{diaChi}"></textarea>
+							</div>
+							<div class="col-md-6">
+								<label for="inputEmail3" class="col m-0 p-2">Chứng minh :</label>
+								<input type="text" placeholder="yyyy-mm-dd" class="col form-control" required="required"
+									name="cmnd" th:field="*{cmnd}"/>
+							</div>
+						</div>
+
+						<div class="row p-3">
+							<div class="col-md-6">
+								<label for="inputEmail3" class="col m-0 p-2">Email :</label> <input type="email"
+									class="col form-control" id="email" placeholder="Email" th:field="*{email}" />
+							</div>
+							<div class="col-md-6">
+								<label for="inputEmail3" class="col m-0 p-2">Số Điện
+									Thoại :</label> <input type="text" class="col form-control" id="sdt"
+									placeholder="số điện thoại" th:field="*{soDienThoai}">
+							</div>
+						</div>
+
+						<div class="row justify-content-between p-3">
+							<div class="col-md-6">
+
+								<div class="container-btn-login">
+									<button class="button-login" id="capnhatbn">Cập Nhật Thay Đổi</button>
+								</div>
+							</div>
+							<div class="col-md-6">
+
+
+								<div class="container-btn-login">
+
+									<a th:href="@{/}" class="button-login tag-a">Trở Về
+										Trang Trủ</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="tabs-2">
+			<button class="dslichhen" id="btnloadds" value="Danh Sách Lịch Hẹn">
+
+			</button>
+			<table class="table table-sm  table-bordered border-info styled-table" id="tableid">
+				
+				<thead style="text-align: center;">
+					<tr>
+						<th>Mã Lịch Hẹn</th>
+						<th>Thời gian</th>
+						<th>Triệu chứng</th>
+						<th>Ghi chú</th>
+						<th>Bác Sĩ</th>
+					</tr>
+					
+					<tr  th:each=" iter : ${lichHen}">   
+						<td th:utext="${iter.maLichHen}">Mã</td>
+            			<td th:utext="${iter.thoiGian}">Thời gian</td>
+						<td th:utext="${iter.trieuChung}">Triệu chứng</td>
+            			<td th:utext="${iter.ghiChu}">Ghi chú</td>
+					
+					</tr>
+				</thead>
+				<tbody id="bodylh">
+				</tbody>
+
+			</table>
+		</div>
+		<div id="tabs-3">
+			<div class="chucnangtab3">
+				
+			</div>
+			
+			<th:block th:each=" iter : ${dsphieukham}">
+			 Phiếu khám thứ  <h1  th:utext="${iter.id}"> </h1>
+       		<table class="table table-sm  table-bordered border-info styled-table">
+				<tr>
+	            			<th>Mã</th>
+							<th>Thời gian khám </th>
+							<th>Chẩn đoán</th>
+							<th>Triệu chứng</th>
+						</tr>
+						<tr>   
+							<td th:utext="${iter.id}">Mã</td>
+	            			<td th:utext="${iter.ngayLapPhieu}">Thời gian khám</td>
+							<td th:utext="${iter.chanDoan}">Chẩn đoán</td>
+	            			<td th:utext="${iter.trieuChung}">Triệu chứng</td>
+						</tr>
+			</table>
+			<table class="table table-sm  table-bordered border-info styled-table">
+				<tr>
+	            			<th>Tên Thuốc</th>
+							<th>Số lượng</th>
+							<th>Đơn vị</th>
+							<th>Đơn giá</th>
+							<th>Ghi chú</th>
+						</tr>
+						<tr  th:each=" iter1 : ${dschitiet}" th:if="${iter1.donthuoc.id} == ${iter.donthuoc.id}">   
+							<td th:utext="${iter1.thuoc.tenThuoc}">Tên Thuốc</td>
+	            			<td th:utext="${iter1.soLuong}">Số lượng</td>
+							<td th:utext="${iter1.thuoc.donVi}">Đơn vị</td>
+	            			<td th:utext="${iter1.giaTien}">Đơn giá</td>
+							<td th:utext="${iter1.ghiChu}">Ghi chú</td>
+						</tr>
+			</table>	
+		</th:block>
+       		
+		</div>
+	</div>
+</body>
+
+</html>

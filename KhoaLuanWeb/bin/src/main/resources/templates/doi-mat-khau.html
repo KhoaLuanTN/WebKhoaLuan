@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>ÃÂÃ¡Â»Âi mÃ¡ÂºÂ­t khÃ¡ÂºÂ©u</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+</head>
+<body>
+<div class="container-login">
+<div class="title-login">
+		<h3 style="text-align: center; margin-top:30px; text-align: center;font-size: 30px;line-height: 40px;">Äá»i máº­t kháº©u</h3>
+		<br>
+		<div class="formdoimatkhau">
+
+			<form th:action="@{/doimatkhau}" method="post" >
+				<div class="form-group">
+					<label class="form-label">Mật khẩu cũ:</label> 
+					<input
+						type="text"  class="form-control"
+						name="matkhaucu">
+				</div>
+				
+				<div class="form-group">
+					<label class="form-label">Mật khẩu mới :</label>
+					<input
+						type="password"  class="form-control" 
+						name="matkhaumoi">
+				</div>
+				<div class="form-group date">
+					<label  class="form-label">Nhập lại mật khẩu :</label> <input
+						type="password" class="form-control"
+						required="required"
+						name="nhaplaimatkhau">
+				</div>
+				
+				
+				<div class="container-btn-login">
+							<button class="button-login" type="submit" value="Dang nhap">Đổi mật khẩu</button>
+						</div>
+			</form>
+		</div>
+	</div>
+</div>
+	
+
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+	
+</body>
+</html>

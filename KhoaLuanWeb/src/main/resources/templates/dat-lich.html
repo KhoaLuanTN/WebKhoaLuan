@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Trang đặt lịch</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.min.css">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body>
+	<div>
+		<div class="container container-padding">
+			<div class="container-login">
+				<div class="title-login">
+					<h3 class="text-sign-in">Trang đặt lịch</h3>
+					<br>
+					<form th:action="@{/dat-lich}" method="post" class="form">
+						
+						
+						<div class="text-padding">
+							<label for="trieuchung">Triệu chứng</label> <input type="text"
+								required="required" class="input-field" name="trieuChung">
+						</div>
+
+						<div class="text-padding">
+							<label for="thoigian">Thời gian khám</label> <input type="date"
+								required="required" name="thoigiankham" class="input-field">
+						</div>
+
+						<div class="text-padding">
+							<label for="ghichu">Ghi chú</label>
+							<textarea rows="1" required="required" class="input-field"
+								name="ghiChu"></textarea>
+						</div>
+						<div class="schedule-error">[[${message}]]</div>
+						<div class="row justify-content-between p-3">
+							<div class="col-md-6">
+
+								<div class="container-btn-login">
+									<button class="button-login" type="submit" value="">Đặt lịch hẹn</button>
+								</div>
+							</div>
+							<div class="col-md-6">
+
+
+								<div class="container-btn-login">
+
+									<a th:href="@{/}" class="button-login tag-b">Trang
+										chủ</a>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+<title>Trang Chủ</title>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<link rel="stylesheet" type="text/css"
+	th:href="@{/fonts/Roboto/Roboto-Bold.ttf}">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+<link th:rel="stylesheet"
+	th:href="@{/assets/bootstrap/css/bootstrap.min.css} " />
+</head>
+
+<body>
+	<div class="container">
+		<!-- <div class="sign-trang-chu">
+
+			<div class="menu_top">
+				<ul class="menu_ul">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#dichvu">Dịch vụ</a></li>
+					<li><a th:href="@{/dang-nhap}">Đăng nhập</a></li>
+					<li><a th:href="@{/logout}">Đăng Xuất</a></li>
+					
+					<li><a th:href="@{/thong-tin}">Thong tin ca nhan</a></li>
+					<li><a th:href="@{/doimatkhau}">Đổi mật khẩu</a></li>
+				</ul>
+
+			</div>
+		</div> -->
+
+		<div class="wrapper">
+			<nav class="menu">
+				<ul class="clearfix">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#dichvu">Dịch vụ</a></li>
+
+					<li><a href="#lien-he">Liên hệ</a></li>
+					<li><a href="#dat-lich">Đặt lịch</a></li>
+					<th:block th:switch="${chucvu}">
+						<th:block th:case="null">
+							<li><a th:href="@{/dang-nhap}">Đăng Nhập</a></li>
+						</th:block>
+						<th:block th:case="'Bệnh Nhân'">
+							<li><a th:utext="${name}"></a>
+								<ul class="sub-menu">
+									<li><a th:href="@{/thong-tin}">Thong tin ca nhan</a></li>
+									<li><a th:href="@{/doimatkhau}">Đổi mật khẩu</a></li>
+									<li><a th:href="@{/logout}">Đăng Xuất</a></li>
+								</ul></li>
+						</th:block>
+					</th:block>
+
+
+				</ul>
+			</nav>
+		</div>
+		<div class="dshinhanh">
+
+			<img th:src="@{/images/Group 3387.jpg}" class="hinhanh" /> <span
+				class="hinhtron"></span> <span class="hinhtron"></span> <span
+				class="hinhtron"></span>
+
+		</div>
+		<div class="gioithieu">
+			<div class="gioithieu_title">
+				<h3>Giới Thiệu Về Phòng Khám</h3>
+			</div>
+			<div class="gioithieu_noidung">
+				<div class="row">
+					<div class="col-sm">
+						<img th:src="@{/images/gioi-thieu.jpg}" class="hinhanh" />
+					</div>
+					<div class="col-sm">
+						<div class="gioi=thieu">Việc sử dụng các bằng chứng trong
+							thế giới thực là cần thiết cho một nghiên cứu lâm sàng hiệu quả.
+							Trong lĩnh vực y tế, các công ty dược phẩm và công nghệ sinh học
+							không ngừng thúc đẩy việc cấp phép để thương mại hóa nhanh chóng
+							trong khi vẫn duy trì mức giá cạnh tranh, vì vậy việc có bằng
+							chứng thực tế làm nguồn lực cho nghiên cứu và thử nghiệm lâm sàng
+							của họ trở nên cực kỳ quan trọng để đạt được lợi thế cạnh tranh.</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="dichvu-home" id="dichvu">
+				<h1 class="home-service">Dịch Vụ</h1>
+				<div class="dichvu_dscacdv">
+					<div class="row row-index">
+						<div class="col-md-4">
+							<div>
+								<img class="img-home" alt="" th:src="@{/images/x-quang.jpg}">
+							</div>
+							<div class="text-service">Mô Tả</div>
+						</div>
+
+						<div class="col-md-4">
+							<div>
+								<img alt="" class="img-home" th:src="@{/images/do-tim.jpg}">
+							</div>
+							<div class="text-service">Moo Ta1</div>
+						</div>
+						<div class="col-md-4">
+							<div>
+								<img alt="" class="img-home" th:src="@{/images/do-tim.jpg}">
+							</div>
+							<div class="text-service">Moo Ta1</div>
+						</div>
+
+					</div>
+
+					<div class="row row-index">
+						<div class="col-md-4">
+							<div>
+								<img class="img-home" alt="" th:src="@{/images/x-quang.jpg}">
+							</div>
+							<div class="text-service">Moo Ta</div>
+						</div>
+
+						<div class="col-md-4">
+							<div>
+								<img alt="" class="img-home" th:src="@{/images/x-quang.jpg}">
+							</div>
+							<div class="text-service">Moo Ta1</div>
+						</div>
+						<div class="col-md-4">
+							<div>
+								<img alt="" class="img-home" th:src="@{/images/x-quang.jpg}">
+							</div>
+							<div class="text-service">Moo Ta1</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="dichvu_title" id="dat-lich">
+				<div class="d-flex justify-content-center">
+
+					<div class="container-btn-datlich">
+
+						<a th:href="@{/dat-lich}" class="button-login-home tag-a">Đặt
+							lịch hẹn</a>
+					</div>
+
+
+
+				</div>
+			</div>
+			<div class="footer-home" id="lien-he">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="thong-tin-index">
+							<div class="thongtin-home">Thông tin liên hệ</div>
+							<div class="tuvan-home">Gọi ngay để được tư vấn</div>
+							<div class="benhvien-home">Phòng khám Long Viễn Hồ Chí Minh</div>
+							<div>
+								<div class="contact-address">Địa chỉ:</div>
+								<div class="diachi-home">456 Hai Bà Trưng, quận 1, thành
+									phố Hồ Chí Minh</div>
+							</div>
+							<div>
+								<div class="contact-phone">Sô điện thoại:</div>
+								<div class="sodienthoai-home">02-780038383</div>
+							</div>
+							<div>
+								<div class="contact-email">Email:</div>
+								<div class="mail-home">phongkhamlv@gmail.com</div>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="thoi-gian-index">
+							<div class="word-home">Thời gian làm việc</div>
+							<div>
+								<div class="time-home">Thời gian phòng khám:</div>
+								<div>07:30-11:30 & 13:30-16:30 từ thứ Hai đến thứ Sáu hàng
+									tuần</div>
+							</div>
+							<div>
+								<div class="emergency-home">Phòng Cấp cứu:</div>
+								<div>24h các ngày trong tuần</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+		<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+		<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+	
+</body>
+<script type="text/javascript">
+document.getElementsByTagName("body")[0].style.cursor = "url('http://wiki-devel.sugarlabs.org/images/e/e2/Arrow.cur'), auto";
+
+
+</script>
+</html>
