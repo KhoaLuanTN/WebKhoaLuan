@@ -337,6 +337,7 @@ public class MyController {
 						content += "Giới tính : " + gioitinh + "<br>";
 						content += "Triệu chứng : " + lichHen.getTrieuChung() + "<br>";
 						content += "Ghi chú bệnh nhân : " + lichHen.getGhiChu()+ "<br>";
+						content += "Đi khám vào lúc : " +lichhenDao.doichuoitungay(lichHen.getThoiGian()) + "<br>";
 						content += "Vui lòng có mặt tại phòng khám để nhận được dịch vụ tốt nhất!" + "<br>";
 						content += "<br>";
 						content += "Cảm ơn bạn đã đặt lịch ở phòng khám chúng tôi.";
