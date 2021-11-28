@@ -23,7 +23,7 @@ import com.example.demo.enity.PhieuKhambenh;
 @Repository
 public class PhieuKhamDAO {
 
-	static String URL="http://localhost:5001";
+	static String URL="http://18.118.228.236:5001";
 	
 	static String GET_PHIEU_KHAM_BY_ID_BENH_NHAN=URL+"/phieukham/getphieukhambybenhnhanid";
 	static String POST_PHIEU_KHAM_BENH=URL+"/phieukham/insert";

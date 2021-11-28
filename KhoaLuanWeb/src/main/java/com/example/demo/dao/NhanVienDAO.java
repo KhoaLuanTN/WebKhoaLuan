@@ -26,7 +26,7 @@ import com.google.gson.JsonParser;
 @Repository
 public class NhanVienDAO {
 	
-	static String URL="http://localhost:5001";
+	static String URL="http://18.118.228.236:5001";
 	
 	static String GET_ALL_NHAN_VIEN=URL+"/nhanvien/getall";
 	static String PUT_NHAN_VIEN=URL+"/nhanvien/update";
