@@ -323,7 +323,7 @@ public class MyController {
 					try {
 
 						messageHelper.setSubject("Xác nhận đặt lịch tại phòng khám");
-						messageHelper.setFrom("phongkhamlv@gmail.com", "Phòng khám LV");
+						messageHelper.setFrom("phongkhamlongvien@gmail.com", "Phòng khám LV");
 						messageHelper.setTo(benhNhan.getEmail());
 						String content = "<b>Xin chào " + benhNhan.getTen() + "</b> <br>";
 						content += "Chúng tôi đã nhận được lịch hẹn trước của bạn tại phòng khám với các thông tin như sau : <br>";
@@ -335,8 +335,8 @@ public class MyController {
 						else
 							gioitinh = "Nữ";
 						content += "Giới tính : " + gioitinh + "<br>";
-						content += "Vào lúc : " + lichhenDao.doichuoitungay(lichHen.getThoiGian()) + "<br>";
-						
+						content += "Triệu chứng : " + lichHen.getTrieuChung() + "<br>";
+						content += "Ghi chú bệnh nhân : " + lichHen.getGhiChu()+ "<br>";
 						content += "Vui lòng có mặt tại phòng khám để nhận được dịch vụ tốt nhất!" + "<br>";
 						content += "<br>";
 						content += "Cảm ơn bạn đã đặt lịch ở phòng khám chúng tôi.";
