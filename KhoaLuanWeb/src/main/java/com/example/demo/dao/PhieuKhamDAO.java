@@ -23,8 +23,8 @@ import com.example.demo.enity.PhieuKhambenh;
 @Repository
 public class PhieuKhamDAO {
 
-	static String URL="http://18.118.228.236:5001";
-	
+//	static String URL="http://18.118.228.236:5001";
+	static String URL="http://localhost:5001";
 	static String GET_PHIEU_KHAM_BY_ID_BENH_NHAN=URL+"/phieukham/getphieukhambybenhnhanid";
 	static String POST_PHIEU_KHAM_BENH=URL+"/phieukham/insert";
 	static String PUT_PHIEU_KHAM_BENH=URL+"/phieukham/update";
@@ -174,7 +174,7 @@ public class PhieuKhamDAO {
 	 * @decription: Lấy danh sách phiếu khám theo bệnh nhân id được gọi về từ RestFullAPI
 	 * */
 	//[START GetAll phiếu khám theo bệnh nhân id]
-	public  List<PhieuKhambenh>GetAllPhieuKhamByBenhNhanIDANDDate(Long idbn) throws IOException {
+	public  List<PhieuKhambenh>GetAllPhieuKhamByBenhNhanID(Long idbn) throws IOException {
 		List<PhieuKhambenh>getall=new ArrayList<>();
 	    URL urlForGetRequest = new URL(GET_PHIEU_KHAM_BY_ID_BENH_NHAN+"/"+idbn);
 	    String readLine = null;

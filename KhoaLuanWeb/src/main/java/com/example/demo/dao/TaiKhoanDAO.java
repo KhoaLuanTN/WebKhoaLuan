@@ -20,7 +20,8 @@ import com.example.demo.enity.TaiKhoan;
 @Repository
 public class TaiKhoanDAO {
 	
-	static String URL="http://18.118.228.236:5001";
+	static String URL="http://localhost:5001";
+//	static String URL="http://18.118.228.236:5001";
 	public  String GET_ALL_TAI_KHOAN=URL+"/taikhoan/getall";
 	public  String GET_ONE_TAI_KHOAN=URL+"/taikhoan/getone";
 	public  String POST_TAI_KHOAN=URL+"/taikhoan/insert"; 
@@ -90,7 +91,7 @@ public class TaiKhoanDAO {
 
 		return taiKhoan;
 	}
-	public  int POSTRequest(TaiKhoan tk) throws IOException {
+	public  int POSTTaiKhoan(TaiKhoan tk) throws IOException {
 		Gson gson = new Gson();
 		String POST_PARAMS = gson.toJson(tk);
 	    
@@ -154,7 +155,7 @@ public class TaiKhoanDAO {
 
 		return responseCode;
 	}
-	public  int PUTRequest(TaiKhoan tk) throws IOException {
+	public  int PUTTaiKhoan(TaiKhoan tk) throws IOException {
 
 		Gson gson = new Gson();
 		String PUT_PARAMS = gson.toJson(tk);
@@ -196,7 +197,7 @@ public class TaiKhoanDAO {
 	public boolean UpdateTK(TaiKhoan tk) {
 		int ketqua=0;
 		try {
-			 ketqua=PUTRequest(tk);
+			 ketqua=PUTTaiKhoan(tk);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

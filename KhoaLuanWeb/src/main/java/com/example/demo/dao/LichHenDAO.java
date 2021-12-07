@@ -23,8 +23,8 @@ import com.google.gson.JsonParser;
 @Repository
 public class LichHenDAO {
 	
-	static String URL="http://18.118.228.236:5001";
-	
+//	static String URL="http://18.118.228.236:5001";
+	static String URL="http://localhost:5001";
 	static String POST_LICH_HEN=URL+"/lichhen/insert";
 	static String GET_LICH_HEN_TRONG_NGAY=URL+"/lichhen/ktralichhenbn";
 	static String GET_ALL_LICH_HEN_BY_BN=URL+"/lichhen/getlichhenbybn";

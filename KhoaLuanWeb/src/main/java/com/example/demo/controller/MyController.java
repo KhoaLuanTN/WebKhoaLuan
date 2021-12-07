@@ -172,7 +172,7 @@ public class MyController {
 		
 		List<PhieuKhambenh> dsphieukham = new ArrayList<PhieuKhambenh>();
 		try {
-			dsphieukham= phieukhamDao.GetAllPhieuKhamByBenhNhanIDANDDate(bn.getId());
+			dsphieukham= phieukhamDao.GetAllPhieuKhamByBenhNhanID(bn.getId());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -215,7 +215,7 @@ public class MyController {
 			if(listrole.get(i).getName().equals("Bệnh Nhân"))
 				taikhoan.setRole(listrole.get(i));
 		taikhoan.setPassword("123456");
-		int ketquaAddTK = taikhoanDao.POSTRequest(taikhoan);
+		int ketquaAddTK = taikhoanDao.POSTTaiKhoan(taikhoan);
 		if (ketquaAddTK == 200) {
 			benhNhan.setTaiKhoan(taikhoan);
 			SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
