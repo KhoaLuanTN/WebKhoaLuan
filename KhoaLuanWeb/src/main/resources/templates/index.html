@@ -2,168 +2,235 @@
 <html xmlns:th="www.thymeleaf.org">
 
 <head>
-<title>Trang Chủ</title>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-<link rel="stylesheet" type="text/css"
-	th:href="@{/fonts/Roboto/Roboto-Bold.ttf}">
-<link th:rel="stylesheet"
-	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
-<link th:rel="stylesheet"
-	th:href="@{/assets/bootstrap/css/bootstrap.min.css} " />
+    <title>Trang Chủ</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/fonts/Roboto/Roboto-Bold.ttf}">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+    <link th:rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css} " />
 </head>
 
 <body>
-	<div class="container">
-		<!-- <div class="sign-trang-chu">
+    <div class="container">
+        <div class="wrapper">
+            <div class="col-md-3 no-padding col-sm-12 nav-img">
+                <img th:src="@{/images/logo.jpg}" class="hinhanh" /> <a data-toggle="collapse" data-target="#menu" href="#"><i
+							class="fas d-block d-md-none small-menu fa-bars"></i></a>
+            </div>
+            <nav class="menu">
+                <ul class="clearfix">
+                    <li><a href="#">Trang chủ</a></li>
+                    <li><a href="#dichvu">Dịch vụ</a></li>
 
-			<div class="menu_top">
-				<ul class="menu_ul">
-					<li><a href="#">Trang chủ</a></li>
-					<li><a href="#dichvu">Dịch vụ</a></li>
-					<li><a th:href="@{/dang-nhap}">Đăng nhập</a></li>
-					<li><a th:href="@{/logout}">Đăng Xuất</a></li>
-					
-					<li><a th:href="@{/thong-tin}">Thông tin cá nhân</a></li>
-					<li><a th:href="@{/doimatkhau}">Đổi mật khẩu</a></li>
-				</ul>
+                    <li><a href="#lien-he">Liên hệ</a></li>
+                    <li><a href="#dat-lich">Đặt lịch</a></li>
+                    <th:block th:switch="${chucvu}">
+                        <th:block th:case="null">
+                            <li><a th:href="@{/dang-nhap}">Đăng Nhập</a></li>
+                        </th:block>
+                        <th:block th:case="'Bệnh Nhân'">
+                            <li>
+                                <a th:utext="${name}"></a>
+                                <ul class="sub-menu">
+                                    <li><a th:href="@{/thong-tin}">Thông tin cá nhân</a></li>
+                                    <li><a th:href="@{/doimatkhau}">Đổi mật khẩu</a></li>
+                                    <li><a th:href="@{/logout}">Đăng Xuất</a></li>
+                                </ul>
+                            </li>
+                        </th:block>
+                    </th:block>
+                </ul>
+            </nav>
+        </div>
+        <div class="dshinhanh">
 
-			</div>
-		</div> -->
+            <img th:src="@{/images/Group 3387.jpg}" class="hinhanh" /> <span class="hinhtron"></span> <span class="hinhtron"></span> <span class="hinhtron"></span>
 
-		<div class="wrapper">
-			<nav class="menu">
-				<ul class="clearfix">
-					<li><a href="#">Trang chủ</a></li>
-					<li><a href="#dichvu">Dịch vụ</a></li>
+        </div>
+        <div class="gioithieu">
+            <div class="gioithieu_title">
+                <h3>PHÒNG KHÁM ĐA KHOA ONLINE LONG VIỄN</h3>
+            </div>
+            <div class="gioithieu_noidung">
+                <div class="row row-content">
+                    <div class="col-sm">
+                        <img th:src="@{/images/gioi-thieu.jpg}" class="hinhanh" />
+                    </div>
+                    <div class="col-sm">
+                        <div class="gioi-thieu">Tư vấn khám bệnh từ xa, không cần di chuyển, người bệnh có thể ngồi tại nhà video call cho bác sĩ để được khám sức khỏe online. Phòng khám đa khoa online Long Viễn luôn cung cấp sự chăm sóc tận tình cho bạn ở mọi thời điểm và tại
+                            bất kỳ đâu.</div>
+                    </div>
+                </div>
 
-					<li><a href="#lien-he">Liên hệ</a></li>
-					<li><a href="#dat-lich">Đặt lịch</a></li>
-					<th:block th:switch="${chucvu}">
-						<th:block th:case="null">
-							<li><a th:href="@{/dang-nhap}">Đăng Nhập</a></li>
-						</th:block>
-						<th:block th:case="'Bệnh Nhân'">
-							<li><a th:utext="${name}"></a>
-								<ul class="sub-menu">
-									<li><a th:href="@{/thong-tin}">Thông tin cá nhân</a></li>
-									<li><a th:href="@{/doimatkhau}">Đổi mật khẩu</a></li>
-									<li><a th:href="@{/logout}">Đăng Xuất</a></li>
-								</ul></li>
-						</th:block>
-					</th:block>
+            </div>
+            <div class="dichvu-home" id="dichvu">
+                <h1 class="home-service">DỊCH VỤ CỦA CHÚNG TÔI</h1>
+                <div class="dichvu_dscacdv">
+                    <div class="row row-index">
+                        <div class="col-md-4 col-service">
+                            <div class="single-sess">
+                                <img class="img-home" alt="" th:src="@{/images/x-quang.jpg}">
+                                <div class="text-service">X-QUANG</div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-service">
+                            <div class="single-sess">
+                                <img alt="" class="img-home" th:src="@{/images/do-tim.jpg}">
+                                <div class="text-service">ĐO ĐIỆN TIM</div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4 col-service">
+                            <div class="single-sess">
+                                <img alt="" class="img-home" th:src="@{/images/service-2.jpg}">
+                                <div class="text-service">KHOA NGOẠI</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row row-index col-service">
+                        <div class="col-md-4 col-service">
+                            <div class="single-sess">
+                                <img class="img-home" alt="" th:src="@{/images/service.jpg}">
+                                <div class="text-service">TẤT CẢ CÁC NHÓM TUỔI</div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4 col-service">
+                            <div class="single-sess">
+                                <img alt="" class="img-home" th:src="@{/images/service-1.jpg}">
+                                <div class="text-service">TRỊ LIỆU CÁ NHÂN</div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-service">
+                            <div class="single-sess">
+                                <img alt="" class="img-home" th:src="@{/images/service-4.jpg}">
+                                <div class="text-service">TRỊ LIỆU NHÓM</div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="section-blog"> BLOG CỦA CHÚNG TÔI </h2>
+            <section class="our-blog row">
+
+                <div class="row w-100 session-title">
+
+                </div>
+                <div class="blog-row row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog">
+                            <figure>
+                                <img alt="" class="img-home" th:src="@{/images/blog_01.jpg}">
+                            </figure>
+                            <div class="blog-detail">
+                                <small>By Admin | August 10 2018</small>
+                                <h4>Nâng cao chất lượng cuộc sống</h4>
+                                <div class="link">
+                                    <a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+                                </div>
+                            </div>
 
 
-				</ul>
-			</nav>
-		</div>
-		<div class="dshinhanh">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog">
+                            <figure>
+                                <img alt="" class="img-home" th:src="@{/images/blog_02.jpg}">
+                            </figure>
+                            <div class="blog-detail">
+                                <small>By Admin | August 10 2018</small>
+                                <h4>Chăm sóc sức khỏe toàn diện</h4>
+                                <div class="link">
+                                    <a href="">Đọc Thêm </a><i class="fas fa-long-arrow-alt-right"></i>
+                                </div>
+                            </div>
 
-			<img th:src="@{/images/Group 3387.jpg}" class="hinhanh" /> <span
-				class="hinhtron"></span> <span class="hinhtron"></span> <span
-				class="hinhtron"></span>
 
-		</div>
-		<div class="gioithieu">
-			<div class="gioithieu_title">
-				<h3>PHÒNG KHÁM ĐA KHOA ONLINE LONG VIỄN</h3>
-			</div>
-			<div class="gioithieu_noidung">
-				<div class="row row-content">
-					<div class="col-sm">
-						<img th:src="@{/images/gioi-thieu.jpg}" class="hinhanh" />
-					</div>
-					<div class="col-sm">
-						<div class="gioi-thieu">Tư vấn khám bệnh từ xa, không cần di chuyển, người bệnh có thể ngồi tại nhà video call cho bác sĩ để được khám sức khỏe online. 
-						Phòng khám đa khoa online Long Viễn luôn cung cấp sự chăm sóc tận tình cho bạn ở mọi thời điểm và tại bất kỳ đâu.</div>
-					</div>
-				</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog">
+                            <figure>
+                                <img alt="" class="img-home" th:src="@{/images/blog_03.jpg}">
+                            </figure>
+                            <div class="blog-detail">
+                                <small>By Admin | August 10 2018</small>
+                                <h4>Phát hiện sớm và can thiệp kịp thời</h4>
+                                <div class="link">
+                                    <a href="">Đọc Thêm</a><i class="fas fa-long-arrow-alt-right"></i>
+                                </div>
+                            </div>
 
-			</div>
-			<div class="dichvu-home" id="dichvu">
-				<h1 class="home-service">Dịch Vụ</h1>
-				<div class="dichvu_dscacdv">
-					<div class="row row-index">
-						<div class="col-md-4">
-							<div>
-								<img class="img-home" alt="" th:src="@{/images/x-quang.jpg}">
-							</div>
-							<div class="text-service">X-Quang</div>
-						</div>
 
-						<div class="col-md-4">
-							<div>
-								<img alt="" class="img-home" th:src="@{/images/do-tim.jpg}">
-							</div>
-							<div class="text-service">Đo Điện tim</div>
-						</div>
-						<div class="col-md-4">
-							<div>
-								<img alt="" class="img-home" th:src="@{/images/khoa-ngoai.jpg}">
-							</div>
-							<div class="text-service">Khoa Ngoại</div>
-						</div>
+                        </div>
+                    </div>
+                </div>
 
-					</div>
-				</div>
-			</div>
-			<div class="dichvu_title" id="dat-lich">
-				<div class="d-flex justify-content-center">
+            </section>
+            <div class="dichvu_title" id="dat-lich">
+                <div class="d-flex justify-content-center">
 
-					<div class="container-btn-datlich">
+                    <div class="container-btn-datlich">
 
-						<a th:href="@{/dat-lich}" class="button-login-home tag-a">Đặt
+                        <a th:href="@{/dat-lich}" class="button-login-home tag-a">Đặt
 							lịch hẹn</a>
-					</div>
+                    </div>
 
 
 
-				</div>
-			</div>
-			<div class="footer-home" id="lien-he">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="thong-tin-index">
-							<div class="thongtin-home">Thông tin liên hệ</div>
-							<div class="tuvan-home">Gọi ngay để được tư vấn</div>
-							<div class="benhvien-home">Phòng khám Long Viễn Hồ Chí Minh</div>
-							<div>
-								<div class="contact-address">Địa chỉ</div>
-								<div class="diachi-home">456 Hai Bà Trưng, quận 1, thành
-									phố Hồ Chí Minh</div>
-							</div>
-							<div>
-								<div class="contact-phone">Số điện thoại</div>
-								<div class="sodienthoai-home">02-780038383</div>
-							</div>
-							<div>
-								<div class="contact-email">Email</div>
-								<div class="mail-home">phongkhamlv@gmail.com</div>
-							</div>
+                </div>
+            </div>
+            <div class="footer-home" id="lien-he">
+                <div class="row row-footer">
+                    <div class="col-md-6 col-footer">
+                        <div class="thong-tin-index">
+                            <div class="thongtin-home">Thông tin liên hệ</div>
+                            <div class="tuvan-home">Gọi ngay để được tư vấn</div>
+                            <div class="benhvien-home">Phòng khám Long Viễn Hồ Chí Minh</div>
+                            <div>
+                                <div class="contact-address">Địa chỉ</div>
+                                <div class="diachi-home">456 Hai Bà Trưng, quận 1, thành phố Hồ Chí Minh</div>
+                            </div>
+                            <div>
+                                <div class="contact-phone">Số điện thoại</div>
+                                <div class="sodienthoai-home">02-780038383</div>
+                            </div>
+                            <div>
+                                <div class="contact-email">Email</div>
+                                <div class="mail-home">phongkhamlv@gmail.com</div>
+                            </div>
 
-						</div>
-					</div>
+                        </div>
+                    </div>
 
-					<div class="col-md-6">
-						<div class="thoi-gian-index">
-							<div class="word-home">Thời gian làm việc</div>
-							<div>
-								<div class="time-home">Thời gian phòng khám</div>
-								<div>07:30-11:30 & 13:30-16:30 từ thứ Hai đến thứ Sáu hàng
-									tuần</div>
-							</div>
-							<div>
-								<div class="emergency-home">Phòng Cấp cứu</div>
-								<div>24h các ngày trong tuần</div>
-							</div>
+                    <div class="col-md-6 col-footer">
+                        <div class="thoi-gian-index">
+                            <div class="word-home">Thời gian làm việc</div>
+                            <div>
+                                <div class="time-home">Thời gian phòng khám</div>
+                                <div class="home-oclock">07:30-11:30 & 13:30-16:30 từ thứ Hai đến thứ Sáu hàng tuần
+                                </div>
+                            </div>
+                            <div>
+                                <div class="emergency-home">Phòng Cấp cứu</div>
+                                <div class="emergency">24h các ngày trong tuần</div>
+                            </div>
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-</script>
 </html>
