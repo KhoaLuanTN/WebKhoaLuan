@@ -2,7 +2,7 @@
 <html xmlns:th="www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Đăng nhập</title>
 <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 <link th:rel="stylesheet"
 	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
@@ -22,27 +22,29 @@
 				</div>
 
 			</div>
-			<form th:action="@{/doLogin}" method="post">
+			<form th:action="@{/doLogin}" method="post" th:object="${TaiKhoan}">
 				<div class="text-padding">
 					<div class="text-sign-name">Tên đăng nhập</div>
-					<input type="text" name="username" class="input-field"><br>
+					<input class="input-field" type="text" name="username">
 				</div>
 				<div class="text-padding">
 					<div class="text-sign-name">Mật khẩu</div>
-					<input type="password" name="password" class="input-field"><br>
+					<input type="password" name="password" class="input-field">
+					<br>
 				</div>
 				<div class="text-padding">
-						<div>
+					<div>
 
-							<!-- <br> <input type="submit" value="Dang nhap"> -->
-							<div class="container-btn-login">
-								<button class="button-login" type="submit" value="Dang nhap">Đăng
-									nhâp</button>
-							</div>
+						<!-- <br> <input type="submit" value="Dang nhap"> -->
+						<div class="container-btn-login">
+							<button class="button-login" type="submit" value="Dang nhap">Đăng
+								nhâp</button>
 						</div>
+					</div>
 			</form>
-			<a th:href="@{/dang-ky}" class="login-home" style="display: flex;">Chưa có tài khoản
-				<div style="color: #5840bb; padding-left: 7px; "> Đăng ký</div>
+			<a th:href="@{/dang-ky}" class="login-home" style="display: flex;">Chưa
+				có tài khoản
+				<div style="color: #5840bb; padding-left: 7px;">Đăng ký</div>
 			</a>
 		</div>
 

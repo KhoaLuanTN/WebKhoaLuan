@@ -57,6 +57,7 @@ body {
 
 .menu {
     background-color: #ffffff !important;
+    margin-left: auto;
 }
 
 
@@ -238,6 +239,7 @@ body {
     align-items: center;
     -webkit-box-pack: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .container-btn-login {
@@ -347,10 +349,11 @@ body {
     display: inline-block;
     position: relative;
     font-size: 19px;
+    cursor: pointer;
 }
 
 .menu>ul>li>a {
-    padding: 10px 40px;
+    padding: 10px 20px;
     display: inline-block;
     color: #6b6b6b !important;
     font-size: 18px;
@@ -858,4 +861,36 @@ body {
 
 .mail-home {
     color: #fff;
+}
+.menu-item{
+	background-color: #fff;
+	padding-left: 128px;
+	padding-right: 128px;
+}
+.tab-menu{
+	border: none;
+    background-color: #fff;	
+}
+.menu-text{
+	background-color: #fff;
+    color: #1f3eae;
+    font-family: Roboto-medium;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: .02em;
+    border-bottom: 3px solid #1f3eae;
+    padding: 0 0 8px;
+    margin: 0 30px 0 0;
+    border: none!important;
+}
+.menu-ul-text{
+	border: none;
+    background-color: #fff;	
+}
+.menu-a-text{
+	color: #1f3eae;
+}
+.help-block{
+	font-size: 18px;
+    color: #FF8A41;
 }

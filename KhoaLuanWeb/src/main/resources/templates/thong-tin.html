@@ -2,7 +2,7 @@
 <html xmlns:th="www.thymeleaf.org">
 
 <head>
-<title>Thông tin cá nhân </title>
+<title>Thông tin cá nhân</title>
 <meta charset="utf-8">
 
 <meta charset="utf-8">
@@ -29,12 +29,15 @@
 </head>
 
 <body>
-	<div class="menu_tab" style="background-color: #fff;" id="tabs">
-		<ul>
-			<li><a href="#tabs-1" id="tt">Thông Tin Cá Nhân</a></li>
-			<li><a href="#tabs-2" id="lh">Thông Tin Lịch Hẹn</a></li>
-			<li><a href="#tabs-3" id="pk">Thông Tin Phiếu Khám Bệnh</a></li>
-		</ul>
+	<div class="menu_tab menu-item" id="tabs">
+		<div class="tab-menu">
+			<ul class="menu-ul-text">
+				<li class="menu-text"><a href="#tabs-1" id="tt" class="menu-a-text">Thông Tin Cá Nhân</a></li>
+				<li class="menu-text"><a href="#tabs-2" id="lh" class="menu-a-text">Thông Tin Lịch Hẹn</a></li>
+				<li class="menu-text"><a href="#tabs-3" id="pk" class="menu-a-text">Thông Tin Phiếu Khám Bệnh</a></li>
+			</ul>
+		</div>
+
 		<div id="tabs-1" class="tab1">
 			<div class="container">
 				<form th:action="@{/capnhat}" method="post" th:object="${benhnhan}">
@@ -43,7 +46,7 @@
 							<div class="col-md-6">
 								<label for="inputEmail3" class="col m-0 p-2 ">Họ và Tên
 									:</label> <input type="text" class="col form-control"
-									placeholder="Họ và Tên" id="hoVaTen" th:field="*{ten}">
+									 placeholder="Ví dụ: Nguyễn Văn A" required="required" id="hoVaTen" th:field="*{ten}">
 							</div>
 							<div class="col-md-6">
 								<label for="inputEmail3" class="col m-0 p-2">Giới Tính :</label>
@@ -57,13 +60,13 @@
 							<div class="col-md-6">
 								<label for="inputEmail3" class="col m-0 p-2">Địa Chỉ :</label>
 								<textarea rows="1" class="col form-control" id="diaChi"
-									placeholder="Địa Chỉ" th:field="*{diaChi}"></textarea>
+									placeholder="Ví dụ: 133 Nguyễn Kiệm,Quận Gò Vấp" required="required" th:field="*{diaChi}"></textarea>
 							</div>
 							<div class="col-md-6">
 								<label for="inputEmail3" class="col m-0 p-2">Chứng minh
-									:</label> <input type="text" placeholder="yyyy-mm-dd"
+									:</label> <input type="text"
 									class="col form-control" required="required" name="cmnd"
-									th:field="*{cmnd}" />
+									th:field="*{cmnd}" placeholder="Có thể bỏ trống nếu chưa có cmnd"/>
 							</div>
 						</div>
 
@@ -71,12 +74,12 @@
 							<div class="col-md-6">
 								<label for="inputEmail3" class="col m-0 p-2">Email :</label> <input
 									type="email" class="col form-control" id="email"
-									placeholder="Email" th:field="*{email}" />
+									required="required" pattern="^(.+)@(.+)$" placeholder="Ví dụ: nguyenvana@gmail.com" th:field="*{email}" />
 							</div>
 							<div class="col-md-6">
 								<label for="inputEmail3" class="col m-0 p-2">Số Điện
 									Thoại :</label> <input type="text" class="col form-control" id="sdt"
-									placeholder="số điện thoại" th:field="*{soDienThoai}">
+									pattern="0[0-9]{9}" placeholder="Ví dụ: 0965651375" th:field="*{soDienThoai}">
 							</div>
 						</div>
 

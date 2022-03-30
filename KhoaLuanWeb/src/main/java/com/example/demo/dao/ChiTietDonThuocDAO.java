@@ -22,8 +22,8 @@ import com.example.demo.enity.Thuoc;
 @Repository
 public class ChiTietDonThuocDAO {
 
-//	static String URL="http://18.118.228.236:5001";
-	static String URL="http://localhost:5001";
+	static String URL="http://18.118.228.236:5001";
+//	static String URL="http://localhost:5001";
 	
 	static String GET_ALL_CHI_TIET_DON_THUOC=URL+"/chitietdonthuoc/getall";
 	static String POST_CHI_TIET_DON_THUOC=URL+"/chitietdonthuoc/insert";

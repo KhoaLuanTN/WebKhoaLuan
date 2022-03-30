@@ -29,8 +29,8 @@ import com.example.demo.enity.TaiKhoan;
 @Repository
 public class BenhNhanDAO {
 	
-//	static String URL="http://18.118.228.236:5001";
-	static String URL="http://localhost:5001";
+	static String URL="http://18.118.228.236:5001";
+//	static String URL="http://localhost:5001";
 	static String GET_ALL_BENH_NHAN=URL+"/benhnhan/getall";
 	static String GET_ALL_PHIEU_KHAM=URL +"/benhnhan/getlist";
 	static String GET_ONE_BENH_NHAN=URL+"/benhnhan/getone";
